@@ -3,104 +3,122 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alors…</title>
+<title>Une question</title>
 
 <style>
-body {
+body{
   margin:0;
-  font-family:"Georgia", serif;
   min-height:100vh;
   display:flex;
   justify-content:center;
   align-items:center;
-  background:#000;
-  color:#111;
+  font-family:"Georgia", serif;
+  background:linear-gradient(135deg,#ffe3ea,#ffffff);
 }
 
-.container {
+.container{
   background:#fff;
-  padding:40px 25px;
-  border-radius:22px;
+  padding:45px 25px;
+  border-radius:26px;
   max-width:700px;
   width:100%;
-  box-shadow:0 8px 22px rgba(0,0,0,0.4);
   text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,0.25);
+  animation:fadeIn 1.2s ease;
 }
 
-h1 {
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(20px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+h1{
   font-size:2rem;
-  margin-bottom:35px;
+  margin-bottom:30px;
 }
 
-.choices {
+p{
+  font-size:1.15rem;
+  line-height:1.8;
+  margin-bottom:45px;
+}
+
+.choices{
   display:flex;
-  gap:15px;
   justify-content:center;
+  gap:20px;
   flex-wrap:wrap;
 }
 
-.choice {
-  padding:14px 28px;
+.choice{
+  padding:14px 34px;
   font-size:1rem;
   border-radius:30px;
   border:2px solid #111;
   background:none;
   cursor:pointer;
-  transition:all 0.25s ease;
+  transition:all 0.35s ease;
+  position:relative;
+  overflow:hidden;
 }
 
-.choice:hover {
-  transform:translateY(-3px) scale(1.05);
+.choice::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:#111;
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform 0.35s ease;
+  z-index:-1;
 }
 
-.choice:active {
-  transform:scale(0.95);
+.choice:hover::after{
+  transform:scaleX(1);
 }
 
-.yes { border-color:#2e7d32; }
-.no { border-color:#c62828; }
-.wait { border-color:#6a1b9a; }
+.choice:hover{
+  color:#fff;
+  transform:translateY(-3px);
+}
 
-#response {
-  margin-top:35px;
-  font-size:1.2rem;
-  opacity:0;
-  transition:opacity 0.3s ease;
+.choice.clicked{
+  transform:scale(0.9);
+  opacity:0.6;
+}
+
+@media(max-width:768px){
+  h1{font-size:1.6rem;}
+  p{font-size:1rem;}
 }
 </style>
 </head>
 
 <body>
 <div class="container">
-  <h1>Alors…</h1>
+  <h1>J’ai une question</h1>
+
+  <p>
+    Je ne te demande rien d’autre  
+    que d’être honnête.  
+    Il n’y a pas de bonne  
+    ou de mauvaise réponse.
+  </p>
 
   <div class="choices">
-    <button class="choice yes">Oui</button>
-    <button class="choice no">Non</button>
-    <button class="choice wait">En attente</button>
+    <button class="choice">Oui</button>
+    <button class="choice">Non</button>
+    <button class="choice">En attente</button>
   </div>
-
-  <p id="response"></p>
 </div>
 
 <script>
-const buttons = document.querySelectorAll(".choice");
-const response = document.getElementById("response");
-
-buttons.forEach(btn => {
-  btn.addEventListener("click", () => {
-    response.style.opacity = 0;
-
-    setTimeout(() => {
-      if (btn.classList.contains("yes")) {
-        response.textContent = "Je souris en lisant ça.";
-      } else if (btn.classList.contains("no")) {
-        response.textContent = "Je respecte ton honnêteté.";
-      } else {
-        response.textContent = "Je comprends. Prends ton temps.";
-      }
-      response.style.opacity = 1;
-    }, 300);
+document.querySelectorAll(".choice").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    btn.classList.add("clicked");
+    setTimeout(()=>{
+      window.location.href="page4.html";
+    },700);
   });
 });
 </script>
