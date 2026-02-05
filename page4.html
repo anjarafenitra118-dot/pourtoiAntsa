@@ -2,74 +2,144 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Et maintenant</title>
-
+<title>Page 4</title>
 <style>
-body{
+body {
   margin:0;
+  padding:20px;
+  font-family:"Georgia", serif;
   min-height:100vh;
   display:flex;
   justify-content:center;
   align-items:center;
-  font-family:"Georgia", serif;
-  background:linear-gradient(135deg,#ffe3ea,#ffffff);
+  background:linear-gradient(135deg,#ffe3ea,#000000,#ffffff);
+  background-size:300% 300%;
+  animation:fadeBG 15s ease infinite;
 }
-
-.container{
-  background:#fff;
-  padding:50px 28px;
-  border-radius:28px;
-  max-width:650px;
+@keyframes fadeBG {
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+.container {
+  background:linear-gradient(135deg,#ffe3ea 0%,#ffffff 50%,#ffe3ea 100%);
+  padding:40px 30px;
+  border-radius:22px;
+  max-width:720px;
   width:100%;
   text-align:center;
-  box-shadow:0 12px 32px rgba(0,0,0,0.25);
-  animation:fadeUp 1.3s ease;
+  box-shadow:0 8px 22px rgba(0,0,0,0.25);
 }
-
-@keyframes fadeUp{
-  from{opacity:0; transform:translateY(25px);}
-  to{opacity:1; transform:translateY(0);}
-}
-
-h1{
-  font-size:2rem;
+.photos {
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
   margin-bottom:30px;
 }
-
-p{
-  font-size:1.15rem;
-  line-height:1.9;
+.photos img {
+  width:200px;
+  height:260px;
+  object-fit:cover;
+  border-radius:12px;
 }
-
-.signature{
-  margin-top:40px;
-  font-style:italic;
-  opacity:0.75;
+p {
+  font-size:1.1rem;
+  line-height:1.8;
+  margin-bottom:30px;
 }
-
-@media(max-width:768px){
-  h1{font-size:1.6rem;}
-  p{font-size:1rem;}
+.buttons {
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+.buttons button {
+  padding:14px;
+  font-size:1rem;
+  border:2px solid #111;
+  border-radius:6px;
+  background:none;
+  cursor:pointer;
+}
+.buttons button:hover {
+  background:#111;
+  color:#fff;
+}
+.popup {
+  position:fixed;
+  top:0;left:0;
+  width:100%;height:100%;
+  background:rgba(0,0,0,0.6);
+  display:none;
+  justify-content:center;
+  align-items:center;
+}
+.popup-content {
+  background:#fff;
+  padding:30px;
+  border-radius:18px;
+  max-width:320px;
+  text-align:center;
+  animation:scaleIn 0.4s ease;
+}
+@keyframes scaleIn {
+  from {transform:scale(0.7);opacity:0;}
+  to {transform:scale(1);opacity:1;}
+}
+@media(max-width:600px){
+  .photos img{
+    width:100%;
+    max-width:240px;
+    height:auto;
+  }
 }
 </style>
 </head>
-
 <body>
+
 <div class="container">
-  <h1>Quoi qu’il arrive</h1>
+<p><strong>Aujourd’hui, 05 février 2026</strong></p>
 
-  <p>
-    Ce moment existe parce qu’il était sincère.  
-    Peu importe la réponse,  
-    je respecte le temps,  
-    les silences  
-    et les chemins que l’on choisit.
-  </p>
-
-  <div class="signature">
-    — Avec douceur
-  </div>
+<div class="photos">
+<img src="https://i.imgur.com/8UEObrN.jpeg">
+<img src="https://i.imgur.com/W7I3z8m.jpeg">
+<img src="https://i.imgur.com/Xpk8X59.jpeg">
+<img src="https://i.imgur.com/En9fgnM.jpeg">
 </div>
+
+<p>
+Antsa Tiana Ravonison,<br><br>
+veux-tu être ma copine,<br>
+ma super femme,<br>
+la future mère de mes enfants ?
+</p>
+
+<div class="buttons">
+<button onclick="showPopup('oui')">OUI</button>
+<button onclick="showPopup('attente')">EN ATTENTE</button>
+<button onclick="showPopup('non')">NON</button>
+</div>
+</div>
+
+<div class="popup" id="popup">
+  <div class="popup-content" id="popupText"></div>
+</div>
+
+<script>
+function showPopup(choice){
+  const text = {
+    oui: "Tu viens de rendre mon cœur incroyablement heureux. Merci d’avoir choisi nous ❤️",
+    attente: "Je respecte ton temps. Peu importe quand, je resterai sincère avec toi 💫",
+    non: "Même si ça fait mal, merci pour ton honnêteté. Ce moment restera précieux 🌙"
+  };
+  document.getElementById("popupText").innerHTML =
+    "<p>"+text[choice]+"</p><br><button onclick='closePopup()'>Fermer</button>";
+  document.getElementById("popup").style.display="flex";
+}
+function closePopup(){
+  document.getElementById("popup").style.display="none";
+}
+</script>
+
 </body>
 </html>
