@@ -2,125 +2,47 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Une question</title>
-
+<title>Page 3</title>
 <style>
-body{
-  margin:0;
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-family:"Georgia", serif;
-  background:linear-gradient(135deg,#ffe3ea,#ffffff);
-}
-
-.container{
-  background:#fff;
-  padding:45px 25px;
-  border-radius:26px;
-  max-width:700px;
-  width:100%;
-  text-align:center;
-  box-shadow:0 10px 30px rgba(0,0,0,0.25);
-  animation:fadeIn 1.2s ease;
-}
-
-@keyframes fadeIn{
-  from{opacity:0; transform:translateY(20px);}
-  to{opacity:1; transform:translateY(0);}
-}
-
-h1{
-  font-size:2rem;
-  margin-bottom:30px;
-}
-
-p{
-  font-size:1.15rem;
-  line-height:1.8;
-  margin-bottom:45px;
-}
-
-.choices{
-  display:flex;
-  justify-content:center;
-  gap:20px;
-  flex-wrap:wrap;
-}
-
-.choice{
-  padding:14px 34px;
-  font-size:1rem;
-  border-radius:30px;
-  border:2px solid #111;
-  background:none;
-  cursor:pointer;
-  transition:all 0.35s ease;
-  position:relative;
-  overflow:hidden;
-}
-
-.choice::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:#111;
-  transform:scaleX(0);
-  transform-origin:left;
-  transition:transform 0.35s ease;
-  z-index:-1;
-}
-
-.choice:hover::after{
-  transform:scaleX(1);
-}
-
-.choice:hover{
-  color:#fff;
-  transform:translateY(-3px);
-}
-
-.choice.clicked{
-  transform:scale(0.9);
-  opacity:0.6;
-}
-
-@media(max-width:768px){
-  h1{font-size:1.6rem;}
-  p{font-size:1rem;}
+body {margin:0;padding:0;font-family:"Georgia", serif;min-height:100vh;display:flex;justify-content:center;align-items:center;text-align:center;padding:20px;background:linear-gradient(135deg,#ffe3ea,#000000,#ffffff);background-size:300% 300%;animation:fadeBG 15s ease infinite;color:#111;}
+@keyframes fadeBG {0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
+.container {background:linear-gradient(135deg,#ffe3ea 0%,#ffffff 50%,#ffe3ea 100%);padding:50px 35px;border-radius:22px;max-width:780px;box-shadow:0 8px 22px rgba(0,0,0,0.25);}
+.photos {display:flex;justify-content:center;gap:20px;margin-bottom:40px;flex-wrap:wrap;}
+.photos img {width:220px;height:300px;object-fit:cover;border-radius:12px;}
+p {font-size:1.15rem;line-height:1.9;margin-bottom:45px;}
+a button {font-size:1rem;padding:14px 30px;border:2px solid #111;border-radius:6px;background:none;cursor:pointer;}
+a button:hover {background:#111;color:#fff;}
+@media(max-width:600px){
+  .photos img{width:100%;max-width:260px;height:auto;}
 }
 </style>
 </head>
-
 <body>
 <div class="container">
-  <h1>J’ai une question</h1>
-
-  <p>
-    Je ne te demande rien d’autre  
-    que d’être honnête.  
-    Il n’y a pas de bonne  
-    ou de mauvaise réponse.
-  </p>
-
-  <div class="choices">
-    <button class="choice">Oui</button>
-    <button class="choice">Non</button>
-    <button class="choice">En attente</button>
-  </div>
+<h1>Ce que je ressens</h1>
+<div class="photos">
+<img src="https://i.imgur.com/FwOmoQo.jpeg">
+<img src="https://i.imgur.com/ixPygFW.jpeg">
+<img src="https://i.imgur.com/N0wLPL3.jpeg">
 </div>
-
-<script>
-document.querySelectorAll(".choice").forEach(btn=>{
-  btn.addEventListener("click",()=>{
-    btn.classList.add("clicked");
-    setTimeout(()=>{
-      window.location.href="page4.html";
-    },700);
-  });
-});
-</script>
+<p>
+Je suis chanceux de t’avoir rencontrée, vraiment.<br><br>
+Après nos longues discussions, je me suis dit que tu méritais sûrement mieux que moi.
+Physiquement, peut-être. Et même au-delà de ça.<br><br>
+Mais au fond… je veux être à toi.
+Je veux que tu sois à moi.
+Et pas juste pour un moment, mais pour la vie.<br><br>
+Je doute souvent.
+Mais sur une chose, je suis sûr :
+c’est toi la femme avec qui je veux avancer,
+celle avec qui je veux passer du temps,
+celle que je veux comme alliée dans la vie,
+la mère de mes enfants,
+l’épouse que je veux un jour.<br><br>
+Ça demandera des efforts.
+Et je suis prêt à défier le monde pour que ça devienne réel.
+</p>
+<a href="page4.html"><button>Continuer</button></a>
+</div>
 </body>
 </html>
