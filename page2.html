@@ -2,32 +2,70 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Page 2</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Un peu plus</title>
+
 <style>
-body {margin:0;padding:0;font-family:"Georgia", serif;min-height:100vh;display:flex;justify-content:center;align-items:center;text-align:center;padding:20px;background:linear-gradient(135deg,#ffe3ea,#000000,#ffffff);background-size:300% 300%;animation:fadeBG 15s ease infinite;color:#111;}
-@keyframes fadeBG {0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
-.container {background:linear-gradient(135deg,#ffe3ea 0%,#ffffff 50%,#ffe3ea 100%);padding:50px 35px;border-radius:22px;max-width:780px;box-shadow:0 8px 22px rgba(0,0,0,0.25);position:relative;overflow:hidden;}
-.container::before {content:"";position:absolute;top:-60px;left:-60px;width:200%;height:200%;background:radial-gradient(circle at 50% 50%,#ffffff 40%,#ffe3ea 100%);opacity:0.25;transform:rotate(40deg);z-index:0;}
-h1 {font-size:2rem;margin-bottom:30px;position:relative;z-index:1;}
-.photos {display:flex;justify-content:center;gap:20px;margin-bottom:40px;position:relative;z-index:1;}
-.photos img {width:220px;height:300px;object-fit:cover;border-radius:12px;filter:brightness(100%) contrast(1.1);transition: transform 0.3s ease, filter 0.3s ease;}
-.photos img:hover {transform:scale(1.08);filter:brightness(105%) contrast(1.2);}
-p {font-size:1.15rem;line-height:1.9;margin-bottom:45px;position:relative;z-index:1;}
-.highlight {font-weight:bold;letter-spacing:1px;}
-a button {font-size:1rem;padding:14px 30px;border:2px solid #111;border-radius:6px;background:none;cursor:pointer;transition:0.3s ease;position:relative;z-index:1;}
-a button:hover {background:#111;color:#fff;}
+body {
+  margin:0;
+  font-family:"Georgia", serif;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#ffe3ea;
+}
+
+.container {
+  background:#fff;
+  padding:40px 25px;
+  border-radius:22px;
+  max-width:700px;
+  width:100%;
+  box-shadow:0 8px 22px rgba(0,0,0,0.25);
+  text-align:center;
+}
+
+h1 {
+  font-size:1.9rem;
+  margin-bottom:25px;
+}
+
+p {
+  font-size:1.1rem;
+  line-height:1.8;
+  margin-bottom:40px;
+}
+
+button {
+  padding:14px 30px;
+  font-size:1rem;
+  border:2px solid #111;
+  background:none;
+  border-radius:6px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover {
+  background:#111;
+  color:#fff;
+}
 </style>
 </head>
+
 <body>
 <div class="container">
-<h1>Pourquoi toi</h1>
-<div class="photos">
-<img src="https://i.imgur.com/W7I3z8m.jpeg" alt="Instant doux 1">
-<img src="https://i.imgur.com/Xpk8X59.jpeg" alt="Instant doux 2">
-<img src="https://i.imgur.com/En9fgnM.jpeg" alt="Instant doux 3">
-</div>
-<p>Je ne sais pas…<br><br>Je me suis perdu dans cette question, encore et encore.<br>Et pourtant, dès le premier regard,<br>quelque chose a frôlé mon cœur.<br><br>Moi, qui d’habitude prends des lunes à m’ouvrir,<br>à parler avec un nouveau visage…<br>avec toi, tout était facile.<br>Comme si nos mots dansaient déjà ensemble.<br>Comme si la nature avait prévu cette rencontre.<br><br><span class="highlight">Tu es spéciale.<br>Unique.</span><br>Et je ne peux que sourire en le disant.</p>
-<a href="page3.html"><button>Continuer</button></a>
+  <h1>Ce que je ressens</h1>
+
+  <p>
+    On est différents, parfois opposés,  
+    et pourtant quelque chose sonne juste.  
+    J’aime la simplicité de nos échanges  
+    et cette proximité qui s’est installée.
+  </p>
+
+  <a href="page3.html"><button>Continuer</button></a>
 </div>
 </body>
 </html>
