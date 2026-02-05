@@ -2,31 +2,114 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Page 1</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nos premiers instants</title>
+
 <style>
-body {margin:0;padding:0;font-family:"Georgia", serif;min-height:100vh;display:flex;justify-content:center;align-items:center;text-align:center;padding:20px;background:linear-gradient(135deg,#ffe3ea,#000000,#ffffff);background-size:300% 300%;animation:fadeBG 15s ease infinite;color:#111;}
-@keyframes fadeBG {0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
-.container {background:linear-gradient(135deg,#ffe3ea 0%,#ffffff 50%,#ffe3ea 100%);padding:50px 35px;border-radius:22px;max-width:780px;box-shadow:0 8px 22px rgba(0,0,0,0.25);position:relative;overflow:hidden;}
-.container::before {content:"";position:absolute;top:-60px;left:-60px;width:200%;height:200%;background:radial-gradient(circle at 50% 50%,#ffffff 40%,#ffe3ea 100%);opacity:0.25;transform:rotate(40deg);z-index:0;}
-h1 {font-size:2rem;margin-bottom:30px;position:relative;z-index:1;}
-.photos {display:flex;justify-content:center;gap:20px;margin-bottom:40px;position:relative;z-index:1;}
-.photos img {width:220px;height:300px;object-fit:cover;border-radius:12px;filter:brightness(100%) contrast(1.1);transition: transform 0.3s ease, filter 0.3s ease;}
-.photos img:hover {transform:scale(1.08);filter:brightness(105%) contrast(1.2);}
-p {font-size:1.15rem;line-height:1.9;margin-bottom:45px;position:relative;z-index:1;}
-a button {font-size:1rem;padding:14px 30px;border:2px solid #111;border-radius:6px;background:none;cursor:pointer;transition:0.3s ease;position:relative;z-index:1;}
-a button:hover {background:#111;color:#fff;}
+body {
+  margin:0;
+  font-family:"Georgia", serif;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#ffe3ea,#000,#fff);
+  background-size:300% 300%;
+  animation:fadeBG 15s ease infinite;
+}
+
+@keyframes fadeBG {
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+.container {
+  background:#fff;
+  padding:40px 25px;
+  border-radius:22px;
+  max-width:800px;
+  width:100%;
+  box-shadow:0 8px 22px rgba(0,0,0,0.25);
+  text-align:center;
+}
+
+h1 {
+  font-size:2rem;
+  margin-bottom:25px;
+}
+
+.photos {
+  display:flex;
+  gap:20px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-bottom:35px;
+}
+
+.photos img {
+  width:220px;
+  height:300px;
+  object-fit:cover;
+  border-radius:12px;
+  transition:0.3s ease;
+}
+
+.photos img:hover {
+  transform:scale(1.05);
+}
+
+p {
+  font-size:1.1rem;
+  line-height:1.8;
+  margin-bottom:35px;
+}
+
+button {
+  padding:14px 30px;
+  font-size:1rem;
+  border:2px solid #111;
+  background:none;
+  border-radius:6px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover {
+  background:#111;
+  color:#fff;
+}
+
+/* MOBILE */
+@media (max-width:768px) {
+  h1 { font-size:1.6rem; }
+  p { font-size:1rem; }
+  .photos img {
+    width:100%;
+    max-width:320px;
+    height:auto;
+  }
+}
 </style>
 </head>
+
 <body>
 <div class="container">
-<h1>Nos premiers instants</h1>
-<div class="photos">
-<img src="https://i.imgur.com/8UEObrN.jpeg" alt="Photo 1">
-<img src="https://i.imgur.com/MwHhz6O.jpeg" alt="Photo 2">
-<img src="https://i.imgur.com/SN3eEtF.jpeg" alt="Photo 3">
-</div>
-<p>Ça ne fait que quelques jours que l’on se connaît, et pourtant j’ai l’étrange impression que nos chemins se sont croisés bien avant.<br>On se comprend sans toujours avoir besoin de mots.<br>J’aime t’écouter parler. Et quand tu m’écoutes, vraiment, tu me fais sentir important — même quand je sais que je peux être un peu envahissant.<br>En à peine cinq jours, une proximité s’est installée.<br>Nous sommes différents, parfois même opposés… et pourtant, quelque chose sonne juste.</p>
-<a href="page2.html"><button>Continuer</button></a>
+  <h1>Nos premiers instants</h1>
+
+  <div class="photos">
+    <img src="https://i.imgur.com/8UEObrN.jpeg">
+    <img src="https://i.imgur.com/MwHhz6O.jpeg">
+    <img src="https://i.imgur.com/SN3eEtF.jpeg">
+  </div>
+
+  <p>
+    Ça ne fait que quelques jours que l’on se connaît,  
+    et pourtant j’ai l’étrange impression que nos chemins  
+    se sont croisés bien avant.
+  </p>
+
+  <a href="page2.html"><button>Continuer</button></a>
 </div>
 </body>
 </html>
